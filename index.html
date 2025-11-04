@@ -1,0 +1,1804 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClearPro Aligner - Professional Clear Aligner Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Reset and Variables */
+        :root {
+            --primary: #1a73e8;
+            --primary-dark: #0d47a1;
+            --primary-light: #e8f0fe;
+            --secondary: #34a853;
+            --accent: #fbbc04;
+            --promo: #e91e63;
+            --dark: #202124;
+            --dark-gray: #5f6368;
+            --light-gray: #f8f9fa;
+            --medium-gray: #dadce0;
+            --white: #ffffff;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+            --border-radius: 8px;
+            --section-padding: 100px 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            overflow-x: hidden;
+            background-color: var(--white);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* FIXED BUTTON STYLES */
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+            box-shadow: var(--shadow);
+        }
+
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+            color: var(--white);
+        }
+
+        .btn-secondary {
+            background: var(--white);
+            color: var(--primary);
+            border: 2px solid var(--white);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.9);
+            color: var(--primary);
+        }
+
+        .btn-accent {
+            background: var(--accent);
+            color: var(--dark);
+        }
+
+        .btn-accent:hover {
+            background: #e6a800;
+            color: var(--dark);
+        }
+
+        .btn-promo {
+            background: var(--promo);
+            color: var(--white);
+        }
+
+        .btn-promo:hover {
+            background: #d81b60;
+            color: var(--white);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .section {
+            padding: var(--section-padding);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            color: var(--dark-gray);
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+
+        /* Promotional Banner */
+        .promo-banner {
+            background: linear-gradient(135deg, var(--promo) 0%, #ad1457 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 15px 0;
+            position: relative;
+            overflow: hidden;
+            z-index: 1001;
+        }
+
+        .promo-banner p {
+            margin: 0;
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .promo-badge {
+            background: var(--white);
+            color: var(--promo);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .close-promo {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: var(--white);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .close-promo:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Header Styles */
+        header {
+            background: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-weight: 700;
+            color: var(--primary);
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1;
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            display: flex;
+            gap: 15px;
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--dark);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: 
+                linear-gradient(135deg, rgba(26, 115, 232, 0.9) 0%, rgba(13, 71, 161, 0.9) 100%),
+                url('https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+            color: var(--white);
+            padding: 120px 0 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" fill="white"/></svg>');
+            background-size: 100% 100px;
+            background-repeat: no-repeat;
+            background-position: bottom;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-text {
+            flex: 1;
+            max-width: 600px;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .hero-visual {
+            flex: 1;
+            text-align: center;
+            position: relative;
+        }
+
+        /* Image-based hero visual */
+        .image-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .aligner-image {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 
+                0 20px 40px rgba(0, 0, 0, 0.3),
+                0 10px 20px rgba(0, 0, 0, 0.2);
+            transform: perspective(1000px) rotateY(-5deg) rotateX(5deg);
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+        }
+
+        .aligner-image:hover {
+            transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
+            box-shadow: 
+                0 25px 50px rgba(0, 0, 0, 0.4),
+                0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Promo Highlight */
+        .promo-highlight {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 30px 0;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .promo-highlight::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+        .promo-highlight h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .promo-highlight p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .promo-countdown {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        .countdown-item {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 8px 12px;
+            min-width: 60px;
+            text-align: center;
+        }
+
+        .countdown-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            display: block;
+        }
+
+        .countdown-label {
+            font-size: 0.7rem;
+            opacity: 0.9;
+            text-transform: uppercase;
+        }
+
+        /* About Section */
+        .about {
+            background: var(--light-gray);
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            color: var(--dark-gray);
+        }
+
+        .about-visual {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .company-stats {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 40px;
+            border-top: 1px solid var(--medium-gray);
+        }
+
+        .stat {
+            flex: 1;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            color: var(--dark-gray);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Products Section */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .product-info {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+
+        .product-info p {
+            color: var(--dark-gray);
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .product-features {
+            margin-bottom: 20px;
+        }
+
+        .product-features li {
+            padding: 5px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .product-features i {
+            color: var(--secondary);
+            margin-right: 10px;
+            font-size: 0.9rem;
+        }
+
+        /* Technology Section */
+        .technology {
+            background: var(--light-gray);
+        }
+
+        .tech-content {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .tech-visual {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .tech-diagram {
+            width: 300px;
+            height: 300px;
+            position: relative;
+        }
+
+        .tech-circle {
+            width: 100%;
+            height: 100%;
+            border: 2px solid var(--primary-light);
+            border-radius: 50%;
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .tech-circle-1 {
+            width: 80%;
+            height: 80%;
+            top: 10%;
+            left: 10%;
+            border-color: var(--primary);
+        }
+
+        .tech-circle-2 {
+            width: 60%;
+            height: 60%;
+            top: 20%;
+            left: 20%;
+            border-color: var(--secondary);
+        }
+
+        .tech-center {
+            width: 40%;
+            height: 40%;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .tech-text {
+            flex: 1;
+        }
+
+        .tech-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+
+        .tech-features {
+            margin-top: 30px;
+        }
+
+        .tech-feature {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+
+        .tech-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-light);
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .tech-feature h4 {
+            margin-bottom: 5px;
+            font-size: 1.2rem;
+        }
+
+        .tech-feature p {
+            color: var(--dark-gray);
+            margin-bottom: 0;
+        }
+
+        /* Process Section */
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin-top: 50px;
+            flex-wrap: wrap;
+        }
+
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--medium-gray);
+            z-index: 0;
+        }
+
+        .step {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            background: var(--white);
+            padding: 0 20px;
+            flex: 1;
+            min-width: 180px;
+            margin-bottom: 30px;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: var(--primary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.8rem;
+            font-weight: 700;
+            box-shadow: var(--shadow);
+            position: relative;
+            z-index: 1;
+        }
+
+        .step h3 {
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .step p {
+            color: var(--dark-gray);
+        }
+
+        /* Partners Section */
+        .partners {
+            text-align: center;
+            background: var(--light-gray);
+        }
+
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            align-items: center;
+        }
+
+        .partner-logo {
+            padding: 20px;
+            background: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 120px;
+            flex-direction: column;
+        }
+
+        .partner-logo:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .partner-name {
+            font-weight: 600;
+            color: var(--primary);
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+
+        .partner-badge {
+            background: var(--accent);
+            color: var(--dark);
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            margin-top: 5px;
+        }
+
+        /* Resources Section */
+        .resources {
+            background: var(--light-gray);
+        }
+
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .resource-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .resource-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .resource-icon {
+            height: 120px;
+            background: var(--primary-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--primary);
+        }
+
+        .resource-content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .resource-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+
+        .resource-content p {
+            color: var(--dark-gray);
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Contact Section */
+        .contact-content {
+            display: flex;
+            gap: 60px;
+        }
+
+        .contact-info {
+            flex: 1;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .contact-details {
+            margin-bottom: 30px;
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--primary-light);
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .contact-form {
+            flex: 1;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--dark);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--medium-gray);
+            border-radius: var(--border-radius);
+            font-size: 16px;
+            transition: var(--transition);
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.2);
+        }
+
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-status {
+            padding: 15px;
+            border-radius: var(--border-radius);
+            margin-bottom: 20px;
+            text-align: center;
+            display: none;
+        }
+
+        .form-status.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+            display: block;
+        }
+
+        .form-status.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: var(--white);
+            padding: 80px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--primary);
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            opacity: 0.8;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-links a i {
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--primary);
+            transform: translateX(5px);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 992px) {
+            .hero-content, .about-content, .tech-content, .contact-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-text, .about-text, .tech-text, .contact-info {
+                margin-bottom: 40px;
+            }
+
+            .tech-feature, .contact-detail {
+                justify-content: center;
+                text-align: left;
+            }
+
+            .process-steps {
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            .process-steps::before {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links, .nav-cta {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .about-text h2, .tech-text h2 {
+                font-size: 2rem;
+            }
+
+            .company-stats {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .aligner-image {
+                max-width: 300px;
+            }
+
+            .promo-banner p {
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .close-promo {
+                position: relative;
+                right: auto;
+                top: auto;
+                transform: none;
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Promotional Banner -->
+    <div class="promo-banner" id="promoBanner">
+        <div class="container">
+            <p>
+                <span class="promo-badge"><i class="fas fa-gift"></i> LIMITED TIME OFFER</span>
+                Get 50% OFF your first ClearPro Aligner case! 
+                <span class="promo-badge">Use code: FIRST50</span>
+            </p>
+            <button class="close-promo" id="closePromo">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">
+                    <img src="logo.png" alt="ClearPro Aligner">
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#technology">Technology</a></li>
+                    <li><a href="#resources">Resources</a></li>
+                    <li><a href="#partners">Partners</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="nav-cta">
+                    <a href="#contact" class="btn">Partner With Us</a>
+                </div>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Professional Clear Aligner Solutions</h1>
+                    <p>ClearPro Aligner delivers cutting-edge clear aligner technology to dental professionals worldwide. Transform smiles with our premium, clinically-proven products.</p>
+                    
+                    <!-- Promotional Highlight -->
+                    <div class="promo-highlight">
+                        <h3><i class="fas fa-tag"></i> Special Introductory Offer</h3>
+                        <p><strong>Get 50% OFF your first ClearPro Aligner case!</strong> Limited time offer for new dental partners.</p>
+                        <div class="promo-countdown" id="countdown">
+                            <div class="countdown-item">
+                                <span class="countdown-value" id="days">07</span>
+                                <span class="countdown-label">Days</span>
+                            </div>
+                            <div class="countdown-item">
+                                <span class="countdown-value" id="hours">23</span>
+                                <span class="countdown-label">Hours</span>
+                            </div>
+                            <div class="countdown-item">
+                                <span class="countdown-value" id="minutes">59</span>
+                                <span class="countdown-label">Minutes</span>
+                            </div>
+                            <div class="countdown-item">
+                                <span class="countdown-value" id="seconds">59</span>
+                                <span class="countdown-label">Seconds</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-btns">
+                        <a href="#products" class="btn">Explore Products</a>
+                        <a href="#contact" class="btn btn-promo">Claim 50% Discount</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="image-container">
+                        <img src="hero.jpg" alt="ClearPro Clear Aligners - Professional Dental Solution" class="aligner-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About ClearPro Aligner</h2>
+                    <p>ClearPro Aligner is a leading manufacturer of professional clear aligner systems, dedicated to advancing orthodontic treatment through innovation and precision engineering.</p>
+                    <p>Founded by a team of dental professionals and engineers, we combine clinical expertise with cutting-edge technology to deliver aligners that offer exceptional fit, comfort, and predictable tooth movement.</p>
+                    <p>Our commitment to quality and continuous improvement has made us the trusted choice for dental practices worldwide seeking reliable clear aligner solutions.</p>
+                    <a href="#technology" class="btn">Our Technology</a>
+                    
+                    <div class="company-stats">
+                        <div class="stat">
+                            <div class="stat-number">15,000+</div>
+                            <div class="stat-label">Dental Partners</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">750K+</div>
+                            <div class="stat-label">Patients Treated</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">98.7%</div>
+                            <div class="stat-label">Success Rate</div>
+                        </div>
+                    </div>
+                </div>
+               
+    <!-- Products Section -->
+    <section class="section" id="products">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Product Line</h2>
+                <p>Comprehensive clear aligner solutions for every clinical need</p>
+            </div>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-info">
+                        <h3>ClearPro Comprehensive</h3>
+                        <p>Complete orthodontic solution for complex cases requiring advanced treatment planning and specialized protocols.</p>
+                        <ul class="product-features">
+                            <li><i class="fas fa-check"></i> Advanced case planning</li>
+                            <li><i class="fas fa-check"></i> Complex malocclusion support</li>
+                            <li><i class="fas fa-check"></i> Specialist consultation</li>
+                            <li><i class="fas fa-check"></i> Extended treatment monitoring</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-outline">Request Information</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-info">
+                        <h3>ClearPro Standard</h3>
+                        <p>Our flagship clear aligner system designed for comprehensive orthodontic treatment with exceptional precision and comfort.</p>
+                        <ul class="product-features">
+                            <li><i class="fas fa-check"></i> Full treatment planning</li>
+                            <li><i class="fas fa-check"></i> Precision tooth movement</li>
+                            <li><i class="fas fa-check"></i> Advanced material technology</li>
+                            <li><i class="fas fa-check"></i> Comprehensive support</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-outline">Request Information</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-info">
+                        <h3>ClearPro Express</h3>
+                        <p>Accelerated treatment system for minor to moderate alignment issues, delivering results in half the time of traditional methods.</p>
+                        <ul class="product-features">
+                            <li><i class="fas fa-check"></i> Faster treatment times</li>
+                            <li><i class="fas fa-check"></i> Simplified case setup</li>
+                            <li><i class="fas fa-check"></i> Reduced chair time</li>
+                            <li><i class="fas fa-check"></i> Cost-effective solution</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-outline">Request Information</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-info">
+                        <h3>ClearPro Lite</h3>
+                        <p>Entry-level aligner system for minor cosmetic adjustments and simple alignment cases, offering an affordable solution for basic orthodontic needs.</p>
+                        <ul class="product-features">
+                            <li><i class="fas fa-check"></i> Basic alignment correction</li>
+                            <li><i class="fas fa-check"></i> Cost-effective solution</li>
+                            <li><i class="fas fa-check"></i> Simplified treatment planning</li>
+                            <li><i class="fas fa-check"></i> Quick turnaround times</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-outline">Request Information</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-info">
+                        <h3>ClearPro Teen</h3>
+                        <p>Specially designed aligner system for younger patients, with compliance indicators and tailored treatment protocols.</p>
+                        <ul class="product-features">
+                            <li><i class="fas fa-check"></i> Compliance indicators</li>
+                            <li><i class="fas fa-check"></i> Youth-focused design</li>
+                            <li><i class="fas fa-check"></i> Parent communication tools</li>
+                            <li><i class="fas fa-check"></i> Educational resources</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-outline">Request Information</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-info">
+                        <h3>ClearPro Retention</h3>
+                        <p>Specialized retention systems to maintain treatment results and ensure long-term stability of tooth alignment.</p>
+                        <ul class="product-features">
+                            <li><i class="fas fa-check"></i> Custom retention planning</li>
+                            <li><i class="fas fa-check"></i> Long-term stability protocols</li>
+                            <li><i class="fas fa-check"></i> Patient compliance tracking</li>
+                            <li><i class="fas fa-check"></i> Maintenance scheduling</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-outline">Request Information</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Section -->
+
+                <div class="tech-text">
+                    <h2>Advanced Aligner Technology</h2>
+                    <p>At ClearPro Aligner, we leverage cutting-edge technology to deliver precision-engineered aligners that ensure predictable tooth movement and exceptional patient outcomes.</p>
+                    
+                    <div class="tech-features">
+                        <div class="tech-feature">
+                            <div class="tech-icon">
+                                <i class="fas fa-atom"></i>
+                            </div>
+                            <div>
+                                <h4>Smart Material Science</h4>
+                                <p>Our proprietary polymer blend provides optimal force delivery with maximum comfort and clarity.</p>
+                            </div>
+                        </div>
+                        <div class="tech-feature">
+                            <div class="tech-icon">
+                                <i class="fas fa-print"></i>
+                            </div>
+                            <div>
+                                <h4>3D Printing Precision</h4>
+                                <p>Advanced additive manufacturing ensures each aligner is produced with micron-level accuracy.</p>
+                            </div>
+                        </div>
+                        <div class="tech-feature">
+                            <div class="tech-icon">
+                                <i class="fas fa-laptop-medical"></i>
+                            </div>
+                            <div>
+                                <h4>Digital Treatment Planning</h4>
+                                <p>AI-powered treatment planning software optimizes tooth movement sequences for efficient results.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="#contact" class="btn">Request Technical Details</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section class="section resources" id="resources">
+        <div class="container">
+            <div class="section-title">
+                <h2>Professional Resources</h2>
+                <p>Tools and resources to support dental professionals</p>
+            </div>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-book-medical"></i>
+                    </div>
+                    <div class="resource-content">
+                        <h3>Clinical Protocols</h3>
+                        <p>Comprehensive clinical guidelines and treatment protocols for optimal patient outcomes with ClearPro aligners.</p>
+                        <a href="#" class="btn btn-outline" id="download-protocols">Download PDF</a>
+                    </div>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <div class="resource-content">
+                        <h3>Training Videos</h3>
+                        <p>Step-by-step video tutorials covering case setup, treatment planning, and clinical best practices.</p>
+                        <a href="#" class="btn btn-outline" id="watch-videos">Watch Now</a>
+                    </div>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-file-medical-alt"></i>
+                    </div>
+                    <div class="resource-content">
+                        <h3>Case Studies</h3>
+                        <p>Real-world case studies demonstrating successful treatment outcomes across various malocclusion types.</p>
+                        <a href="#" class="btn btn-outline" id="view-cases">View Cases</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="section partners" id="partners">
+        <div class="container">
+            <div class="section-title">
+                <h2>Trusted by Dental Professionals Worldwide</h2>
+                <p>Join thousands of dental practices and organizations using ClearPro Aligner systems</p>
+            </div>
+            <div class="partners-grid">
+                <div class="partner-logo">
+                    <i class="fas fa-tooth fa-2x" style="color: #1a73e8;"></i>
+                    <div class="partner-name">American Dental Association</div>
+                    <div class="partner-badge">Premier Partner</div>
+                </div>
+                <div class="partner-logo">
+                    <i class="fas fa-hospital fa-2x" style="color: #34a853;"></i>
+                    <div class="partner-name">Mayo Clinic Dental</div>
+                    <div class="partner-badge">Clinical Partner</div>
+                </div>
+                <div class="partner-logo">
+                    <i class="fas fa-graduation-cap fa-2x" style="color: #fbbc04;"></i>
+                    <div class="partner-name">Harvard School of Dental Medicine</div>
+                    <div class="partner-badge">Education Partner</div>
+                </div>
+                <div class="partner-logo">
+                    <i class="fas fa-clinic-medical fa-2x" style="color: #1a73e8;"></i>
+                    <div class="partner-name">Aspen Dental</div>
+                    <div class="partner-badge">Enterprise Partner</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Partner With ClearPro Aligner</h2>
+            <p>Join our network of dental professionals and offer your patients the highest quality clear aligner treatment available.</p>
+            <a href="#contact" class="btn btn-promo">Claim Your 50% First Case Discount</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+                <p>Get in touch to learn more about our products and partnership opportunities</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <p>Contact our team to discuss how ClearPro Aligner can benefit your practice and patients.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-detail">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4>Address</h4>
+                                <p>123 Innovation Drive, Tech Park<br>San Francisco, CA 94107</p>
+                            </div>
+                        </div>
+                        <div class="contact-detail">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>+1 (555) 123-4567</p>
+                            </div>
+                        </div>
+                        <div class="contact-detail">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4>Email</h4>
+                                <p>info@clearproaligner.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm" action="https://formspree.io/f/xovprwpz" method="POST">
+                        <div id="formStatus" class="form-status"></div>
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="practice">Dental Practice/Organization</label>
+                            <input type="text" id="practice" name="practice" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="interest">Product Interest</label>
+                            <select id="interest" name="interest" class="form-control" required>
+                                <option value="">Select an option</option>
+                                <option value="comprehensive">ClearPro Comprehensive</option>
+                                <option value="standard">ClearPro Standard</option>
+                                <option value="express">ClearPro Express</option>
+                                <option value="lite">ClearPro Lite</option>
+                                <option value="teen">ClearPro Teen</option>
+                                <option value="retention">ClearPro Retention</option>
+                                <option value="partnership">Partnership Information</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="promo">Promo Code (Optional)</label>
+                            <input type="text" id="promo" name="promo" class="form-control" value="FIRST50" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="btn" style="width: 100%;">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>ClearPro Aligner</h3>
+                    <p>Leading manufacturer of professional clear aligner systems for dental professionals worldwide.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Products</h3>
+                    <ul class="footer-links">
+                        <li><a href="#products"><i class="fas fa-chevron-right"></i> ClearPro Comprehensive</a></li>
+                        <li><a href="#products"><i class="fas fa-chevron-right"></i> ClearPro Standard</a></li>
+                        <li><a href="#products"><i class="fas fa-chevron-right"></i> ClearPro Express</a></li>
+                        <li><a href="#products"><i class="fas fa-chevron-right"></i> ClearPro Lite</a></li>
+                        <li><a href="#products"><i class="fas fa-chevron-right"></i> ClearPro Teen</a></li>
+                        <li><a href="#products"><i class="fas fa-chevron-right"></i> ClearPro Retention</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="#about"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="#technology"><i class="fas fa-chevron-right"></i> Technology</a></li>
+                        <li><a href="#resources"><i class="fas fa-chevron-right"></i> Resources</a></li>
+                        <li><a href="#partners"><i class="fas fa-chevron-right"></i> Partners</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="#resources"><i class="fas fa-chevron-right"></i> Clinical Protocols</a></li>
+                        <li><a href="#resources"><i class="fas fa-chevron-right"></i> Training Videos</a></li>
+                        <li><a href="#resources"><i class="fas fa-chevron-right"></i> Case Studies</a></li>
+                        <li><a href="#contact"><i class="fas fa-chevron-right"></i> Support Center</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 ClearPro Aligner. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // DOM Elements
+        const elements = {
+            mobileMenu: document.querySelector('.mobile-menu'),
+            navLinks: document.querySelector('.nav-links'),
+            navCta: document.querySelector('.nav-cta'),
+            contactForm: document.getElementById('contactForm'),
+            formStatus: document.getElementById('formStatus'),
+            resourceButtons: {
+                protocols: document.getElementById('download-protocols'),
+                videos: document.getElementById('watch-videos'),
+                cases: document.getElementById('view-cases')
+            },
+            promoBanner: document.getElementById('promoBanner'),
+            closePromo: document.getElementById('closePromo'),
+            countdown: document.getElementById('countdown'),
+            days: document.getElementById('days'),
+            hours: document.getElementById('hours'),
+            minutes: document.getElementById('minutes'),
+            seconds: document.getElementById('seconds')
+        };
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const isOpen = elements.navLinks.style.display === 'flex';
+            
+            if (isOpen) {
+                elements.navLinks.style.display = 'none';
+                elements.navCta.style.display = 'none';
+            } else {
+                elements.navLinks.style.display = 'flex';
+                elements.navCta.style.display = 'flex';
+                elements.navLinks.style.flexDirection = 'column';
+                elements.navLinks.style.position = 'absolute';
+                elements.navLinks.style.top = '80px';
+                elements.navLinks.style.left = '0';
+                elements.navLinks.style.width = '100%';
+                elements.navLinks.style.background = 'white';
+                elements.navLinks.style.padding = '20px';
+                elements.navLinks.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)';
+                
+                elements.navCta.style.flexDirection = 'column';
+                elements.navCta.style.position = 'absolute';
+                elements.navCta.style.top = '350px';
+                elements.navCta.style.left = '0';
+                elements.navCta.style.width = '100%';
+                elements.navCta.style.padding = '0 20px';
+            }
+        }
+
+        // Smooth Scrolling
+        function smoothScroll(targetId) {
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                if (window.innerWidth <= 768 && elements.navLinks.style.display === 'flex') {
+                    elements.navLinks.style.display = 'none';
+                    elements.navCta.style.display = 'none';
+                }
+            }
+        }
+
+        // Form Submission Handler
+        async function handleFormSubmit(e) {
+            e.preventDefault();
+            
+            const submitButton = elements.contactForm.querySelector('button[type="submit"]');
+            submitButton.disabled = true;
+            submitButton.textContent = 'Sending...';
+            
+            try {
+                const formData = new FormData(elements.contactForm);
+                const response = await fetch(elements.contactForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    elements.formStatus.textContent = 'Thank you for your message! We will contact you shortly.';
+                    elements.formStatus.className = 'form-status success';
+                    elements.contactForm.reset();
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            } catch (error) {
+                elements.formStatus.textContent = 'There was a problem sending your message. Please try again.';
+                elements.formStatus.className = 'form-status error';
+            } finally {
+                submitButton.disabled = false;
+                submitButton.textContent = 'Send Message';
+            }
+        }
+
+        // Resource Button Handlers
+        function handleResourceClick(action) {
+            const messages = {
+                protocols: 'Clinical Protocols PDF would download here. In production, this would link to an actual PDF file.',
+                videos: 'Training videos would open here. In production, this would link to a video library or YouTube channel.',
+                cases: 'Case studies would display here. In production, this would link to detailed case study pages.'
+            };
+            alert(messages[action]);
+        }
+
+        // Promo Banner Close
+        function closePromoBanner() {
+            elements.promoBanner.style.display = 'none';
+        }
+
+        // Countdown Timer
+        function updateCountdown() {
+            // Set the target date (7 days from now)
+            const targetDate = new Date();
+            targetDate.setDate(targetDate.getDate() + 7);
+            
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+            
+            if (distance < 0) {
+                // Countdown finished
+                elements.countdown.innerHTML = '<div class="countdown-item"><span class="countdown-value">Offer Expired</span></div>';
+                return;
+            }
+            
+            // Calculate days, hours, minutes, seconds
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            // Update display
+            elements.days.textContent = days.toString().padStart(2, '0');
+            elements.hours.textContent = hours.toString().padStart(2, '0');
+            elements.minutes.textContent = minutes.toString().padStart(2, '0');
+            elements.seconds.textContent = seconds.toString().padStart(2, '0');
+        }
+
+        // Event Listeners
+        function initializeEventListeners() {
+            // Mobile menu
+            elements.mobileMenu.addEventListener('click', toggleMobileMenu);
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId !== '#') {
+                        smoothScroll(targetId);
+                    }
+                });
+            });
+            
+            // Form submission
+            elements.contactForm.addEventListener('submit', handleFormSubmit);
+            
+            // Resource buttons
+            elements.resourceButtons.protocols.addEventListener('click', (e) => {
+                e.preventDefault();
+                handleResourceClick('protocols');
+            });
+            
+            elements.resourceButtons.videos.addEventListener('click', (e) => {
+                e.preventDefault();
+                handleResourceClick('videos');
+            });
+            
+            elements.resourceButtons.cases.addEventListener('click', (e) => {
+                e.preventDefault();
+                handleResourceClick('cases');
+            });
+            
+            // Promo banner close
+            elements.closePromo.addEventListener('click', closePromoBanner);
+        }
+
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeEventListeners();
+            
+            // Initialize countdown timer
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+        });
+    </script>
+</body>
+</html>
